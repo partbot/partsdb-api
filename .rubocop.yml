@@ -1,3 +1,6 @@
+AllCops:
+  TargetRubyVersion: 2.5
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
@@ -12,5 +15,8 @@ Style/Documentation:
 Layout/LineLength:
   Max: 250
 
-AllCops:
-  TargetRubyVersion: 2.5
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
