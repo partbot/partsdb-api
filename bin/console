@@ -11,7 +11,7 @@ require "partsdb"
 # require "pry"
 # Pry.start
 
-@client = Partsdb::Client.new(api_key: ENV['PARTSDB_API_KEY'])
+@client = Partsdb::Client.new(api_key: ENV["PARTSDB_API_KEY"])
 
 require "irb"
 IRB.start(__FILE__)

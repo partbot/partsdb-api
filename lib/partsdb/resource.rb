@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Partsdb
   class Resource
     def initialize(client)

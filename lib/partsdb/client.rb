@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "faraday"
 require "faraday_middleware"
 require_relative "custom_cookie_auth"
@@ -16,13 +18,13 @@ module Partsdb
     def vehicles
       VehiclesResource.new(self)
     end
-    
+
     def connection
       @connection ||= Faraday.new do |conn|
         conn.url_prefix = BASE_URL
         conn.request :json
         conn.use :custom_cookie_auth, @api_key
-        conn.response :json, content_type: "application/json"#, parser_options: {object_class: OpenStruct}
+        conn.response :json, content_type: "application/json" # , parser_options: {object_class: OpenStruct}
         conn.adapter adapter
       end
     end

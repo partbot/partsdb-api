@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require "ostruct"
-require 'active_support/core_ext/hash'
+require "active_support/core_ext/hash"
 
 module Partsdb
   class Object
     def initialize(attributes)
-      #@attributes = attributes 
-      #@attributes.
+      # @attributes = attributes
+      # @attributes.
       @attributes = OpenStruct.new(attributes.deep_transform_keys { |key| key.to_s.underscore })
     end
 
@@ -14,7 +16,7 @@ module Partsdb
       attribute.is_a?(Hash) ? Object.new(attribute) : attribute
     end
 
-    def respond_to_missing?(method, private=false) 
+    def respond_to_missing?(_method, _private = false)
       true
     end
   end
