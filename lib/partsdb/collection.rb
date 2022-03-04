@@ -6,7 +6,7 @@ module Partsdb
     def self.from_response(response)
       body = response.body
       new(
-        data: body.map { |attrs| Object.new(attrs) }
+        data: body.map { |attrs| attrs.is_a?(Hash) ? Object.new(attrs) : attrs }
       )
     end
 

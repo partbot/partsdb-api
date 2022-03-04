@@ -17,5 +17,9 @@ module Partsdb
     def vehicle_by_vehicle_id(vehicle_id:)
       Object.new get("Vehicle/SearchVehicleByVehicleID", params: { "VehicleID": vehicle_id, "PageNum": 1, "PageSize": 100 }).body
     end
+
+    def engine_codes_by_vehicle_id(vehicle_id:)
+      Collection.from_response get("Vehicle/EngineCode", params: { "VehicleID": vehicle_id })
+    end
   end
 end
